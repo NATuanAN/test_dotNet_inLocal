@@ -1,0 +1,8 @@
+@aspTest_HostAddress = http://localhost:5137
+
+GET {{aspTest_HostAddress}}
+/hoas/
+Accept: application/json
+
+
+###
