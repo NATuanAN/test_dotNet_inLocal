@@ -1,0 +1,73 @@
+Dự án ASP.NET Web API với MongoDB
+Giới thiệu
+Dự án này là một RESTful API cơ bản dùng ASP.NET Minimal API kết hợp MongoDB để CRUD dữ liệu Hoa.
+
+Yêu cầu
+.NET 7 SDK (hoặc phiên bản tương thích)
+
+MongoDB (local hoặc cluster)
+
+Công cụ để test API: Postman, curl, hoặc trình duyệt
+
+Cấu hình MongoDB
+Cấu hình kết nối MongoDB nằm trong file appsettings.json:
+
+json
+Sao chép
+Chỉnh sửa
+{
+  "MongoDbSettings": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "hoas"
+  }
+}
+ConnectionString: Chuỗi kết nối tới MongoDB.
+
+
+Nếu dùng MongoDB cluster, thay chuỗi kết nối cho phù hợp.
+
+Cách chạy dự án
+Clone repo về máy:
+
+bash
+Sao chép
+Chỉnh sửa
+git clone https://github.com/NATuanAN/test_dotNet_inLocal.git
+cd test_dotNet_inLocal
+
+Chạy ứng dụng:
+
+bash
+Sao chép
+Chỉnh sửa
+dotnet run(có thể dùng dotnet watch run để khi thay đổi code tự động chỉnh sửa trên trinh duyệduyệ)
+Mở trình duyệt hoặc Postman, truy cập:
+
+http://localhost:5137/ để kiểm tra API có chạy không.
+
+Các endpoint CRUD hoa:
+
+GET /hoa - Lấy danh sách hoa
+
+GET /hoa/{id} - Lấy hoa theo ID
+
+POST /hoa - Tạo hoa mới (gửi JSON body)
+
+PUT /hoa/{id} - Cập nhật hoa
+
+DELETE /hoa/{id} - Xóa hoa
+
+Ví dụ JSON khi tạo hoa (POST /hoa)
+json
+Sao chép
+Chỉnh sửa
+{
+  "maHoa": "H001",
+  "maLoai": "L001",
+  "tenHoa": "Hoa Hồng",
+  "giaBan": "100000",
+  "hinh": "hinh-hoa-hong.jpg",
+  "moTa": "Hoa đẹp đỏ thắm"
+}
+
+
